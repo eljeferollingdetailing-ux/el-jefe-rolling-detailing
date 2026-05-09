@@ -97,6 +97,20 @@ export default function Home() {
           method="POST"
           style={formStyle}
         >
+            <input
+  type="hidden"
+  name="_autoresponse"
+  value={`✅ El Jefe Rolling Detailing
+
+Thank you for your booking!
+
+Service: {service}
+Date: {date}
+
+We will contact you shortly to confirm your appointment.
+
+📞 (559) 860-8139`}
+/>
      <input
   type="hidden"
   name="_autoresponse"
