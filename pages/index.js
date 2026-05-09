@@ -32,7 +32,7 @@ export default function Home() {
     src="/logo.png"
     alt="El Jefe Rolling Detailing Logo"
     style={{
-      width: "280px",
+      width: "220px",
       marginBottom: "20px"
     }}
   />
