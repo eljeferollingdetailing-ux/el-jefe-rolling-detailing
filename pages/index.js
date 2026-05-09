@@ -97,8 +97,36 @@ export default function Home() {
           method="POST"
           style={formStyle}
         >
-          <input name="name" type="text" placeholder="Your Name" required style={inputStyle} />
-          <input name="date" type="date" required style={inputStyle} />
+          <input
+  name="name"
+  type="text"
+  placeholder="Your Name"
+  required
+  style={inputStyle}
+/>
+
+<input
+  name="phone"
+  type="tel"
+  placeholder="Your Phone Number"
+  required
+  style={inputStyle}
+/>
+
+<input
+  name="_replyto"
+  type="email"
+  placeholder="Your Email"
+  required
+  style={inputStyle}
+/>
+
+<input
+  name="date"
+  type="date"
+  required
+  style={inputStyle}
+/>
 
           <select name="service" required style={inputStyle}>
             <option value="">Select a Service</option>
