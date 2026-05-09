@@ -97,6 +97,11 @@ export default function Home() {
           method="POST"
           style={formStyle}
         >
+     <input
+  type="hidden"
+  name="_autoresponse"
+  value="✅ Thank you for booking with El Jefe Rolling Detailing! We received your request and will contact you shortly to confirm your appointment."
+/>       
           <input
   name="name"
   type="text"
