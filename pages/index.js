@@ -25,13 +25,29 @@ export default function Home() {
       </nav>
 
       {/* HERO */}
-      <section id="home" style={sectionStyle}>
-        <h1 style={{ color: "#D4AF37" }}>
-          El Jefe Rolling Detailing
-        </h1>
-        <p>We Bring the Shine to You</p>
-      </section>
+   <section id="home" style={{ padding: "80px 40px", textAlign: "center" }}>
 
+  {/* BIG CENTER LOGO */}
+  <img
+    src="/logo.png"
+    alt="El Jefe Rolling Detailing Logo"
+    style={{
+      width: "280px",
+      marginBottom: "20px"
+    }}
+  />
+
+  {/* Business Name */}
+  <h1 style={{ color: "#D4AF37", fontSize: "38px" }}>
+    El Jefe Rolling Detailing
+  </h1>
+
+  {/* Tagline */}
+  <p style={{ fontSize: "20px", marginTop: "10px" }}>
+    We Bring the Shine to You
+  </p>
+
+</section>
       {/* SERVICES */}
       <section id="services" style={sectionStyle}>
         <h2 style={{ color: "#D4AF37" }}>Services</h2>
