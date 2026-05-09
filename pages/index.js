@@ -141,7 +141,7 @@ export default function Home() {
         </form>
 
         <p style={{ marginTop: "10px", fontSize: "14px" }}>
-          $50 booking fee required (non-refundable)
+          $25 booking fee required (non-refundable)
         </p>
       </section>
 
