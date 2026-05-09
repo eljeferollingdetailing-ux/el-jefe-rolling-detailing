@@ -63,27 +63,50 @@ export default function Home() {
         </ul>
       </section>
 
-      {/* BOOKING */}
-      <section id="booking" style={{ padding: "60px 40px" }}>
+      {/* BOOKING FORM */}
+      <section
+        id="booking"
+        style={{
+          padding: "60px 40px",
+          maxWidth: "500px",
+          margin: "0 auto",
+          textAlign: "center",
+        }}
+      >
         <h2 style={{ color: "#D4AF37" }}>Book Your Detail</h2>
-        <p>
-          To book an appointment, call or text us:
-        </p>
-        <p style={{ fontSize: "20px" }}>
-          <a
-            href="tel:15598608139"
-            style={{ color: "#D4AF37", textDecoration: "none" }}
-          >
-            (559) 860‑8139
-          </a>
-        </p>
+
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            alert(
+              "✅ Booking received! We will contact you shortly."
+            );
+          }}
+          style={{ display: "flex", flexDirection: "column", gap: "15px" }}
+        >
+          <input type="text" placeholder="Your Name" required style={inputStyle} />
+          <input type="date" required style={inputStyle} />
+
+          <select required style={inputStyle}>
+            <option value="">Select a Service</option>
+            <option>Exterior Detail</option>
+            <option>Interior Detail</option>
+            <option>Full Detail Package</option>
+          </select>
+
+          <button type="submit" style={buttonStyle}>
+            Submit Booking
+          </button>
+        </form>
       </section>
 
       {/* CONTACT */}
-      <section id="contact" style={{ padding: "60px 40px" }}>
+      <section id="contact" style={{ padding: "60px 40px", textAlign: "center" }}>
         <h2 style={{ color: "#D4AF37" }}>Contact</h2>
         <p>
-          Mobile service — we come to you.
+          <a href="tel:15598608139" style={{ color: "#D4AF37" }}>
+            (559) 860‑8139
+          </a>
         </p>
       </section>
     </div>
@@ -94,7 +117,6 @@ export default function Home() {
 const linkStyle = {
   color: "#ffffff",
   textDecoration: "none",
-  fontSize: "16px",
 };
 
 const buttonStyle = {
@@ -104,4 +126,14 @@ const buttonStyle = {
   borderRadius: "6px",
   textDecoration: "none",
   fontWeight: "bold",
+  cursor: "pointer",
 };
+
+const inputStyle = {
+  padding: "12px",
+  borderRadius: "6px",
+  border: "1px solid #D4AF37",
+  backgroundColor: "#000000",
+  color: "#ffffff",
+};
+``
