@@ -25,28 +25,62 @@ export default function Home() {
       </nav>
 
       {/* HERO */}
-   <section id="home" style={{ padding: "80px 40px", textAlign: "center" }}>
-
-  {/* BIG CENTER LOGO */}
-  <img
-    src="/logo.png"
-    alt="El Jefe Rolling Detailing Logo"
+{/* HERO SECTION */}
+<section
+  id="home"
+  style={{
+    height: "90vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    textAlign: "center",
+    backgroundImage:
+      "url('https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?auto=format&fit=crop&w=1600&q=80')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    position: "relative",
+  }}
+>
+  {/* Dark overlay */}
+  <div
     style={{
-      width: "220px",
-      marginBottom: "20px"
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: "rgba(0,0,0,0.7)",
     }}
   />
 
-  {/* Business Name */}
-  <h1 style={{ color: "#D4AF37", fontSize: "38px" }}>
-    El Jefe Rolling Detailing
-  </h1>
+  {/* Content */}
+  <div
+    style={{
+      position: "relative",
+      zIndex: 2,
+      animation: "fadeIn 1.5s ease-in-out",
+    }}
+  >
+    {/* BIG LOGO WITH GOLD GLOW */}
+    <img
+      src="/logo.png"
+      alt="Logo"
+      style={{
+        width: "260px",
+        marginBottom: "20px",
+        filter: "drop-shadow(0 0 20px #D4AF37)",
+      }}
+    />
 
-  {/* Tagline */}
-  <p style={{ fontSize: "20px", marginTop: "10px" }}>
-    We Bring the Shine to You
-  </p>
+    <h1 style={{ color: "#D4AF37", fontSize: "42px" }}>
+      El Jefe Rolling Detailing
+    </h1>
 
+    <p style={{ fontSize: "20px", marginTop: "10px" }}>
+      We Bring the Shine to You
+    </p>
+  </div>
 </section>
       {/* SERVICES */}
       <section id="services" style={sectionStyle}>
@@ -154,3 +188,19 @@ const inputStyle = {
   backgroundColor: "#000000",
   color: "#ffffff",
 };
+if (typeof document !== "undefined") {
+  const style = document.createElement("style");
+  style.innerHTML = `
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  `;
+  document.head.appendChild(style);
+}
