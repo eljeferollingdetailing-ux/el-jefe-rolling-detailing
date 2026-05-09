@@ -9,52 +9,31 @@ export default function Home() {
       }}
     >
       {/* NAVIGATION BAR */}
-      <nav
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "20px 40px",
-          borderBottom: "1px solid #D4AF37",
-        }}
-      >
-        {/* Logo */}
+      <nav style={navStyle}>
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-          <img
-            src="/logo.png"
-            alt="El Jefe Rolling Detailing Logo"
-            style={{ height: "50px" }}
-          />
-          <strong style={{ color: "#D4AF37", fontSize: "18px" }}>
+          <img src="/logo.png" alt="Logo" style={{ height: "50px" }} />
+          <strong style={{ color: "#D4AF37" }}>
             El Jefe Rolling Detailing
           </strong>
         </div>
 
-        {/* Navigation Links */}
-        <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
+        <div style={{ display: "flex", gap: "20px" }}>
           <a href="#home" style={linkStyle}>Home</a>
           <a href="#services" style={linkStyle}>Services</a>
-          <a href="#contact" style={linkStyle}>Contact</a>
-
-          {/* Booking Button */}
-          <a href="#booking" style={buttonStyle}>
-            Book Now
-          </a>
+          <a href="#booking" style={buttonStyle}>Book Now</a>
         </div>
       </nav>
 
-      {/* HERO SECTION */}
-      <section id="home" style={{ padding: "80px 40px", textAlign: "center" }}>
-        <h1 style={{ color: "#D4AF37", fontSize: "42px" }}>
+      {/* HERO */}
+      <section id="home" style={sectionStyle}>
+        <h1 style={{ color: "#D4AF37" }}>
           El Jefe Rolling Detailing
         </h1>
-        <p style={{ fontSize: "20px", marginTop: "10px" }}>
-          We Bring the Shine to You
-        </p>
+        <p>We Bring the Shine to You</p>
       </section>
 
       {/* SERVICES */}
-      <section id="services" style={{ padding: "60px 40px" }}>
+      <section id="services" style={sectionStyle}>
         <h2 style={{ color: "#D4AF37" }}>Services</h2>
         <ul>
           <li>Exterior Detail (60 minutes)</li>
@@ -64,30 +43,30 @@ export default function Home() {
       </section>
 
       {/* BOOKING FORM */}
-      <section
-        id="booking"
-        style={{
-          padding: "60px 40px",
-          maxWidth: "500px",
-          margin: "0 auto",
-          textAlign: "center",
-        }}
-      >
+      <section id="booking" style={sectionStyle}>
         <h2 style={{ color: "#D4AF37" }}>Book Your Detail</h2>
 
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            alert(
-              "✅ Booking received! We will contact you shortly."
-            );
-          }}
-          style={{ display: "flex", flexDirection: "column", gap: "15px" }}
+          action="https://formspree.io/f/meenrlpz"
+          method="POST"
+          style={formStyle}
         >
-          <input type="text" placeholder="Your Name" required style={inputStyle} />
-          <input type="date" required style={inputStyle} />
+          <input
+            name="name"
+            type="text"
+            placeholder="Your Name"
+            required
+            style={inputStyle}
+          />
 
-          <select required style={inputStyle}>
+          <input
+            name="date"
+            type="date"
+            required
+            style={inputStyle}
+          />
+
+          <select name="service" required style={inputStyle}>
             <option value="">Select a Service</option>
             <option>Exterior Detail</option>
             <option>Interior Detail</option>
@@ -98,22 +77,44 @@ export default function Home() {
             Submit Booking
           </button>
         </form>
+
+        <p style={{ marginTop: "10px", fontSize: "14px" }}>
+          $50 booking fee required (non-refundable)
+        </p>
       </section>
 
       {/* CONTACT */}
-      <section id="contact" style={{ padding: "60px 40px", textAlign: "center" }}>
+      <section style={sectionStyle}>
         <h2 style={{ color: "#D4AF37" }}>Contact</h2>
-        <p>
-          <a href="tel:15598608139" style={{ color: "#D4AF37" }}>
-            (559) 860‑8139
-          </a>
-        </p>
+        <a href="tel:15598608139" style={{ color: "#D4AF37" }}>
+          (559) 860-8139
+        </a>
       </section>
     </div>
   );
 }
 
-/* Styles */
+/* STYLES */
+const navStyle = {
+  display: "flex",
+  justifyContent: "space-between",
+  padding: "20px 40px",
+  borderBottom: "1px solid #D4AF37",
+};
+
+const sectionStyle = {
+  padding: "60px 40px",
+  textAlign: "center",
+};
+
+const formStyle = {
+  display: "flex",
+  flexDirection: "column",
+  gap: "15px",
+  maxWidth: "400px",
+  margin: "0 auto",
+};
+
 const linkStyle = {
   color: "#ffffff",
   textDecoration: "none",
@@ -122,18 +123,18 @@ const linkStyle = {
 const buttonStyle = {
   backgroundColor: "#D4AF37",
   color: "#000000",
-  padding: "10px 18px",
+  padding: "10px",
   borderRadius: "6px",
+  border: "none",
+  cursor: "pointer",
   textDecoration: "none",
   fontWeight: "bold",
-  cursor: "pointer",
 };
 
 const inputStyle = {
   padding: "12px",
-  borderRadius: "6px",
   border: "1px solid #D4AF37",
+  borderRadius: "6px",
   backgroundColor: "#000000",
   color: "#ffffff",
 };
-``
